@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document </title>
+</head>
+<body>
+
+<input type="number" id="delka">
+<button onclick="vykresliCaru()">Vykreslit čáru</button>
+
+<div id="vysledek"></div>
+
+<script>
+    function vykresliCaru() {
+    let delka = document.getElementById('delka').value;
+
+    let cara = '.'.repeat(delka);
+
+    document.getElementById('vysledek').innerText = cara;
+}
+
+</script>
+
+</body>
+</html>

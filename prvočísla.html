@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+  <button onclick="zobrazPrvocisla()">Start</button>
+
+  <div id="vysledek"></div>
+
+</style>
+<script>
+function jePrvocislo(cislo) {
+    if (cislo <= 1) return false;
+    if (cislo <= 3 || cislo === 5) return true;
+    if (cislo % 2 === 0 || cislo % 3 === 0 || cislo % 5 === 0) return false;
+
+    let limit = Math.sqrt(cislo);
+    for (let i = 5; i <= limit; i += 6) {
+        if (cislo % i === 0 || cislo % (i + 2) === 0) return false;
+    }
+    return true;
+}
+
+function zobrazPrvocisla() {
+    let prvocisla = [];
+    for (let i = 2; i <= 1000; i++) {
+        if (jePrvocislo(i)) prvocisla.push(i);
+    }
+    document.getElementById('vysledek').innerText = prvocisla.join(', ');
+}
+
+</script>
+
+</body>
+</html>
